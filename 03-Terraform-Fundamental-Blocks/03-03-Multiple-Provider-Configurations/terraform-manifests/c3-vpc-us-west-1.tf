@@ -1,14 +1,8 @@
-# Resource Block to Create VPC in us-west-1
-resource "aws_vpc" "vpc-us-west-1" {
-  cidr_block = "10.1.0.0/16"
+resource "aws_vpc" "VPC-us-east-1" {
+  cidr_block       = "10.0.0.0/16"
+  instance_tenancy = "default"
   provider = aws.aws-west-1
   tags = {
-    "Name" = "vpc-us-west-1"
+    Name = "vvktestvpc1"
   }
 }
-
-
-/*
-Additional Note: 
-provider = <PROVIDER NAME>.<ALIAS>  # This is a Meta-Argument from Resources Section nothing but a Special Argument
-*/
